@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Neue', cursive;
+  background-color: #f0f9ff;
+  color: #333;
+  padding-bottom: 40px;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00bcd4;
+  padding: 15px 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  animation: slideIn 1s ease-out;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  animation: logoFade 1.2s ease-out;
+}
+
+.site-title {
+  font-size: 28px;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: logoFade 1.2s ease-out;
+}
+
+
+.menu {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Comic Neue', cursive;
+  font-size: 16px;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #ffd600;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: #fff8dc;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+
+main {
+  padding: 40px 30px;
+  max-width: 900px;
+  margin: 30px auto 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+main h2 {
+  font-size: 26px;
+  color: #00bcd4;
+  margin-bottom: 20px;
+}
+
+main p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+}
+
+
+.direitos-cidadao {
+  font-family: 'Comic Neue', cursive;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 30px;
+  text-align: center;
+  color: #333;
+}
+
+.titulo-direitos {
+  font-size: 26px;
+  color: #00bcd4;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.texto-direitos {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  color: #444;
+}
+
+
+.carrossel-section {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.carrossel {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.slide.ativo {
+  display: flex;
+}
+
+.slide img {
+  width: 35%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.texto-slide {
+  width: 55%;
+  padding-left: 10px;
+}
+
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  color: #333;
+  padding: 5px 10px;
+}
+
+.seta:hover {
+  color: #007bff;
+}
+
+.seta.esquerda {
+  left: -8px;
+}
+
+.seta.direita {
+  right: -8px;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes logoFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.ajuda-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.titulo-ajuda {
+  font-size: 30px;
+  color: #00bcd4;
+  margin-bottom: 30px;
+  font-family: 'Comic Neue', cursive;
+  text-transform: uppercase;
+}
+
+.ajuda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.ajuda-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  font-family: 'Comic Neue', cursive;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ajuda-card:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.ajuda-card h3 {
+  font-size: 20px;
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+.ajuda-card ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.ajuda-card ul li {
+  margin-bottom: 6px;
+}
+
+.ajuda-card a {
+  color: #007bff;
+  text-decoration: underline;
+}

@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Neue', cursive;
+  background-color: #f0f9ff;
+  color: #333;
+  padding-bottom: 40px;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00bcd4;
+  padding: 15px 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  animation: slideIn 1s ease-out;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  animation: logoFade 1.2s ease-out;
+}
+
+.site-title {
+  font-size: 28px;
+  color: white;
+  margin: 0;
+  font-family: 'Comic Neue', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes logoFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Comic Neue', cursive;
+  font-size: 16px;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #ffd600;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: #fff8dc;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.apresentacao {
+  width: 80%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff8e7;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: 'Comic Neue', cursive;
+}
+
+.apresentacao-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.imagem-apresentacao {
+  text-align: center;
+}
+
+.imagem-grande {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.texto-apresentacao h2 {
+  font-size: 2em;
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.texto-apresentacao p {
+  font-size: 1.1em;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .apresentacao-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .imagem-grande {
+    max-width: 75%;
+  }
+}
+
+.carrossel-section {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.titulo-carrossel {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00bcd4;
+  font-size: 40px;
+}
+
+.carrossel {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  display: none;
+}
+
+.slide img {
+  display: flex;
+  width: 35%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.texto-slide {
+  width: 55%;
+  padding-left: 10px;
+}
+
+.slide.ativo {
+  display: flex;
+}
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  color: #333;
+  padding: 5px 10px;
+}
+
+.seta:hover {
+  color: #007bff;
+}
+
+.seta.esquerda {
+  left: -8px;
+}
+
+.seta.direita {
+  right: -8px;
+}
